@@ -19,10 +19,10 @@ CREATE TABLE "users" (
 CREATE TABLE "to_dos" (
     "id" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "priority" "ToDoPriority" NOT NULL,
-    "status" "ToDoStatus" NOT NULL,
+    "priority" "ToDoPriority" NOT NULL DEFAULT 'LOW',
+    "status" "ToDoStatus" NOT NULL DEFAULT 'PENDENT',
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "userId" TEXT NOT NULL,
+    "user_id" TEXT NOT NULL,
 
     CONSTRAINT "to_dos_pkey" PRIMARY KEY ("id")
 );
@@ -31,4 +31,4 @@ CREATE TABLE "to_dos" (
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
 -- AddForeignKey
-ALTER TABLE "to_dos" ADD CONSTRAINT "to_dos_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "to_dos" ADD CONSTRAINT "to_dos_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

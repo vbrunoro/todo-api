@@ -30,7 +30,7 @@ model User {
   email         String   @unique
   password_hash String
   created_at    DateTime @default(now())
-  ToDo          ToDo[]
+  to_do         ToDo[]
 
   @@map("users")
 }
@@ -38,12 +38,12 @@ model User {
 model ToDo {
   id          String       @id @default(uuid())
   description String
-  priority    ToDoPriority
+  priority    ToDoPriority @default(LOW)
   status      ToDoStatus   @default(PENDENT)
   created_at  DateTime     @default(now())
 
-  user   User   @relation(fields: [userId], references: [id])
-  userId String
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
 
   @@map("to_dos")
 }
