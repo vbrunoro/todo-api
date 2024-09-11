@@ -39,7 +39,7 @@ model ToDo {
   id          String       @id @default(uuid())
   description String
   priority    ToDoPriority
-  status      ToDoStatus
+  status      ToDoStatus   @default(PENDENT)
   created_at  DateTime     @default(now())
 
   user   User   @relation(fields: [userId], references: [id])
