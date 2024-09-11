@@ -4,6 +4,10 @@ import { ToDoRepository } from '../todo-repository'
 
 export class InMemoryToDoRepository implements ToDoRepository {
   public items: ToDo[] = []
+  async findManyByUserId(userId: string) {
+    return this.items
+      .filter((toDo) => toDo.user_id === userId)
+  }
 
   async create(data: Prisma.ToDoUncheckedCreateInput) {
     const toDo = {
