@@ -9,7 +9,7 @@ export async function list(request: FastifyRequest, reply: FastifyReply) {
     userId: request.user.sub,
   })
 
-  return reply.status(200).send({
+  return reply.status(200).send(
     toDo,
-  })
+  )
 }
