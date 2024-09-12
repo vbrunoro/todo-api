@@ -4,11 +4,16 @@ import { appRoutes } from './http/routes'
 import { ZodError } from 'zod'
 import { env } from './env'
 import fastifyJwt from '@fastify/jwt'
+import fastifySwagger from '@fastify/swagger'
+import fastifySwaggerUi from '@fastify/swagger-ui'
 
 export const app = fastify()
 app.register(cors, {
-  // credentials: true,
-  // put your options here
+})
+
+app.register(fastifySwagger)
+app.register(fastifySwaggerUi, {
+  routePrefix: '/documentation',
 })
 
 app.register(fastifyJwt, {

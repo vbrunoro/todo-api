@@ -2,10 +2,8 @@
 Clonar o repositório
 ```
     git clone git@github.com:vbrunoro/todo-api.git  
-    cd todo-api
 ```
       
-
 Instalar dependências
 ```
     npm install
@@ -29,4 +27,9 @@ Para subir o banco de dados é preciso ter o docker instalado
 Para sincronizar o schema do Prisma com o banco de dados
 ```
     npx prisma migrate dev
+```
+
+Documentação com swagger
+```
+    http://localhost:3333/documentation
 ```
