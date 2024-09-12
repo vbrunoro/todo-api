@@ -1,31 +1,32 @@
-### Rodar em localhost
-    # Clonar o repositório
-    ```sh
-    git clone git@github.com:vbrunoro/todo-api.git
+## Rodar em localhost
+Clonar o repositório
+```
+    git clone git@github.com:vbrunoro/todo-api.git  
     cd todo-api
-     ```
+```
+      
 
-    # Instalar dependências
-    ```sh
+Instalar dependências
+```
     npm install
-     ```
+```
 
-    # Fazer o build
-    ```sh
+Fazer o build
+```
     npm run build
-     ```
+```
 
-    # Rodar a aplicação
-    ```sh
+Rodar a aplicação
+```
     npm start
-     ```
+```
 
-    # Para subir o banco de dados é preciso ter o docker instalado
-    ```sh
+Para subir o banco de dados é preciso ter o docker instalado
+```
     docker compose up -d
-     ```
+```
 
-    # Para sincronizar o schema do Prisma com o banco de dados
-    ```sh
+Para sincronizar o schema do Prisma com o banco de dados
+```
     npx prisma migrate dev
-     ```
+```
